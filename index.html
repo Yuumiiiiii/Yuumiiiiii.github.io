@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yuchen Guo — Designer & Researcher</title>
+<meta name="description" content="Portfolio of Yuchen Guo, MSOR student at Columbia Engineering working at the intersection of design, data, and human behavior.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #FAFBFC;
+    --bg-2: #E8EEF6;
+    --ink: #0A1F44;
+    --ink-soft: #2C3E63;
+    --muted: #7A8699;
+    --rule: #D8E0EC;
+    --accent: #0A1F44;
+    --accent-soft: #4A6FA5;
+    --accent-light: #9BB8E0;
+    --serif: 'Instrument Serif', Georgia, serif;
+    --sans: 'Inter Tight', -apple-system, system-ui, sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection { background: var(--ink); color: var(--bg); }
+
+  a { color: inherit; text-decoration: none; }
+
+  .container {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  /* ===== TOP NAV ===== */
+  nav.top {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(250, 251, 252, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--rule);
+  }
+  nav.top .inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 40px;
+    max-width: 1180px;
+    margin: 0 auto;
+  }
+  nav.top .mark {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 24px;
+    letter-spacing: -0.01em;
+    line-height: 1;
+  }
+  nav.top .mark em {
+    font-style: italic;
+    color: var(--accent-soft);
+  }
+  nav.top ul {
+    list-style: none;
+    display: flex;
+    gap: 32px;
+    font-size: 14px;
+  }
+  nav.top ul a {
+    color: var(--ink-soft);
+    transition: color 0.2s;
+  }
+  nav.top ul a:hover { color: var(--accent-soft); }
+
+  /* ===== HERO ===== */
+  .hero {
+    padding: 140px 0 100px;
+    border-bottom: 1px solid var(--rule);
+    position: relative;
+  }
+
+  .hero .label {
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent-soft);
+    font-weight: 500;
+    margin-bottom: 32px;
+  }
+
+  .hero h1 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(72px, 11vw, 148px);
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    margin-bottom: 32px;
+  }
+  .hero h1 em {
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  .hero .tagline {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(28px, 3.4vw, 40px);
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    max-width: 28ch;
+    margin-bottom: 48px;
+  }
+  .hero .tagline em {
+    font-style: italic;
+  }
+
+  .hero .lede {
+    max-width: 56ch;
+    font-size: 19px;
+    color: var(--ink-soft);
+    line-height: 1.55;
+  }
+
+  .hero .meta {
+    margin-top: 56px;
+    display: flex;
+    gap: 56px;
+    flex-wrap: wrap;
+    font-size: 14px;
+  }
+  .hero .meta div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .hero .meta .k {
+    color: var(--muted);
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .hero .meta .v {
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  /* ===== ABOUT ===== */
+  .about {
+    padding: 100px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .about .grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 80px;
+    align-items: start;
+  }
+  .about .label-col {
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 500;
+    padding-top: 8px;
+  }
+  .about p {
+    font-family: var(--serif);
+    font-weight: 300;
+    font-size: 26px;
+    line-height: 1.45;
+    letter-spacing: -0.005em;
+    color: var(--ink);
+    margin-bottom: 24px;
+  }
+  .about p:last-child { margin-bottom: 0; }
+  .about p em { font-style: italic; }
+  .about p .accent { color: var(--accent-soft); font-style: italic; }
+
+  /* ===== WORK SECTION ===== */
+  .work-header {
+    padding: 100px 0 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .work-header h2 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 40px;
+    letter-spacing: -0.02em;
+  }
+  .work-header h2 em { font-style: italic; }
+  .work-header .count {
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* ===== PROJECT ===== */
+  .project {
+    padding: 80px 0;
+    border-top: 1px solid var(--rule);
+  }
+  .project .head {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    gap: 24px;
+    margin-bottom: 60px;
+    align-items: start;
+  }
+  .project .num {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 32px;
+    color: var(--accent-soft);
+    line-height: 1;
+    padding-top: 12px;
+  }
+  .project .head-main {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 60px;
+    align-items: start;
+  }
+  .project h3 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(36px, 4.5vw, 56px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+  }
+  .project h3 em { font-style: italic; }
+
+  .project .tagline {
+    font-size: 19px;
+    color: var(--ink-soft);
+    line-height: 1.5;
+    max-width: 50ch;
+  }
+
+  .project .meta-side {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 8px;
+  }
+  .project .meta-row .k {
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+  .project .meta-row .v {
+    font-size: 14px;
+    color: var(--ink);
+    line-height: 1.5;
+  }
+
+  /* ===== LIONS-MED HERO IMAGE BLOCK ===== */
+  .lm-hero {
+    background: var(--ink);
+    border-radius: 8px;
+    padding: 60px 40px 0;
+    margin: 0 0 60px;
+    overflow: hidden;
+    position: relative;
+  }
+  .lm-hero::before {
+    content: '';
+    position: absolute;
+    top: -180px;
+    right: -180px;
+    width: 480px;
+    height: 480px;
+    background: radial-gradient(circle, rgba(155, 184, 224, 0.18) 0%, rgba(155, 184, 224, 0) 70%);
+    pointer-events: none;
+  }
+  .lm-hero > * { position: relative; z-index: 1; }
+  .lm-hero .lm-brand {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+  .lm-hero .lm-brand img {
+    width: 64px;
+    height: 64px;
+    border-radius: 14px;
+  }
+  .lm-hero .lm-brand .name {
+    color: #FFFFFF;
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 28px;
+    letter-spacing: -0.01em;
+  }
+  .lm-hero .lm-brand .sub {
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    margin-top: 2px;
+  }
+  .lm-hero .lm-pull {
+    color: rgba(255, 255, 255, 0.95);
+    font-family: var(--serif);
+    font-weight: 400;
+    font-style: italic;
+    font-size: clamp(24px, 2.6vw, 32px);
+    line-height: 1.35;
+    max-width: 32ch;
+    margin-bottom: 8px;
+    letter-spacing: -0.005em;
+  }
+  .lm-hero .lm-cite {
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+    font-weight: 500;
+  }
+  .lm-hero .screens {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+    scrollbar-width: thin;
+  }
+  .lm-hero .screens img {
+    height: 460px;
+    width: auto;
+    border-radius: 18px;
+    flex-shrink: 0;
+    background: #fff;
+    box-shadow: 0 30px 60px -20px rgba(0,0,0,0.4);
+  }
+
+  /* ===== PROJECT BODY ===== */
+  .project-body {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    gap: 24px;
+  }
+  .project-body .body-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 56px 60px;
+  }
+  .body-block h4 {
+    font-family: var(--sans);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent-soft);
+    font-weight: 600;
+    margin-bottom: 14px;
+  }
+  .body-block p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--ink-soft);
+    margin-bottom: 14px;
+  }
+  .body-block p:last-child { margin-bottom: 0; }
+  .body-block.full {
+    grid-column: 1 / -1;
+  }
+  .body-block ul {
+    list-style: none;
+  }
+  .body-block ul li {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--ink-soft);
+    padding-left: 24px;
+    position: relative;
+    margin-bottom: 8px;
+  }
+  .body-block ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 12px;
+    width: 12px;
+    height: 1px;
+    background: var(--accent-soft);
+  }
+
+  blockquote.pull {
+    grid-column: 1 / -1;
+    font-family: var(--serif);
+    font-weight: 300;
+    font-style: italic;
+    font-size: 28px;
+    line-height: 1.4;
+    color: var(--ink);
+    border-left: 2px solid var(--accent-soft);
+    padding: 8px 0 8px 32px;
+    margin: 24px 0;
+    max-width: 30ch;
+  }
+  blockquote.pull cite {
+    display: block;
+    font-family: var(--sans);
+    font-style: normal;
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 16px;
+    letter-spacing: 0.04em;
+  }
+
+  /* ===== SECONDARY PROJECT (smaller) ===== */
+  .project.secondary .head-main {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .project.secondary h3 {
+    font-size: clamp(28px, 3.5vw, 40px);
+    margin-bottom: 12px;
+  }
+  .project.secondary .meta-side {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 32px;
+    margin-top: 24px;
+    padding-top: 0;
+  }
+  .project.secondary .project-body .body-content {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    max-width: 75ch;
+  }
+
+  /* ===== FOOTER / CONTACT ===== */
+  footer {
+    margin-top: 100px;
+    padding: 100px 0 60px;
+    background: var(--ink);
+    color: var(--bg);
+  }
+  footer .container { color: var(--bg); }
+  footer .label {
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 500;
+    margin-bottom: 32px;
+  }
+  footer h2 {
+    font-family: var(--serif);
+    font-weight: 300;
+    font-size: clamp(40px, 6vw, 76px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 56px;
+    max-width: 18ch;
+  }
+  footer h2 em { font-style: italic; }
+  footer h2 a {
+    color: var(--accent-light);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 8px;
+    transition: opacity 0.2s;
+  }
+  footer h2 a:hover { opacity: 0.7; }
+
+  footer .links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    padding-top: 48px;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+  }
+  footer .links .col .k {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 8px;
+  }
+  footer .links .col a, footer .links .col .v {
+    font-size: 15px;
+    color: var(--bg);
+    transition: color 0.2s;
+  }
+  footer .links .col a:hover { color: var(--accent-light); }
+
+  footer .colophon {
+    margin-top: 80px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.5);
+    letter-spacing: 0.04em;
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 900px) {
+    .container { padding: 0 24px; }
+    nav.top .inner { padding: 16px 24px; }
+    nav.top ul { gap: 20px; font-size: 13px; }
+    .hero { padding: 80px 0 60px; }
+    .about { padding: 60px 0; }
+    .about .grid { grid-template-columns: 1fr; gap: 32px; }
+    .about p { font-size: 22px; }
+    .work-header { padding: 60px 0 40px; }
+    .project { padding: 60px 0; }
+    .project .head { grid-template-columns: 1fr; gap: 16px; }
+    .project .num { padding-top: 0; font-size: 24px; }
+    .project .head-main { grid-template-columns: 1fr; gap: 32px; }
+    .project-body { grid-template-columns: 1fr; }
+    .project-body .body-content { grid-template-columns: 1fr; gap: 32px; }
+    .lm-hero { padding: 32px 24px 0; }
+    .lm-hero .screens img { height: 360px; }
+    blockquote.pull { font-size: 22px; padding-left: 20px; }
+    footer .links { grid-template-columns: 1fr; gap: 24px; }
+    footer .colophon { flex-direction: column; gap: 8px; }
+  }
+
+  @media (max-width: 600px) {
+    nav.top ul li:nth-child(2) { display: none; }
+    .hero .meta { gap: 28px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="top">
+  <div class="inner">
+    <a href="#" class="mark">Yuchen <em>Guo</em></a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="container">
+    <div class="label">Portfolio · 2026</div>
+    <h1>Yuchen Guo.</h1>
+    <p class="tagline">Design and research at the intersection of <em>operations</em>, data, and human behavior.</p>
+    <p class="lede">Graduate student at Columbia Engineering. I work on problems where the data is messy, the stakes are real, and the existing tools don't quite fit. Recent work spans crowdsourced healthcare information, computer vision, and information retrieval.</p>
+    <div class="meta">
+      <div>
+        <span class="k">Currently</span>
+        <span class="v">Columbia, MSOR '26</span>
+      </div>
+      <div>
+        <span class="k">Based in</span>
+        <span class="v">New York City</span>
+      </div>
+      <div>
+        <span class="k">Focus</span>
+        <span class="v">Design, research, prototyping</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ ABOUT ============ -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="grid">
+      <div class="label-col">About</div>
+      <div>
+        <p>My background is in <em>applied mathematics</em> and operations research, but the work I find most meaningful sits closer to people than to formulas.</p>
+        <p>I care about the <span class="accent">gap between data and decision</span>: how someone in a difficult moment finds the one piece of information they need, how a system earns trust, and how design choices made months earlier quietly shape what becomes possible later.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WORK ============ -->
+<section id="work">
+  <div class="container">
+    <div class="work-header">
+      <h2>Selected <em>work</em></h2>
+      <span class="count">Three projects</span>
+    </div>
+  </div>
+
+  <!-- ===== PROJECT 01 — LIONS-MED ===== -->
+  <article class="project">
+    <div class="container">
+      <div class="head">
+        <div class="num">01</div>
+        <div class="head-main">
+          <div>
+            <h3>Lions-Med: real-time healthcare info for a city in <em>recovery</em>.</h3>
+            <p class="tagline">A crowdsourced platform that helps New Yorkers find clinics, medications, and care in the hours and days after a disaster, when official channels go dark.</p>
+          </div>
+          <div class="meta-side">
+            <div class="meta-row">
+              <div class="k">Role</div>
+              <div class="v">Lead designer, prototype engineer</div>
+            </div>
+            <div class="meta-row">
+              <div class="k">Team</div>
+              <div class="v">Yuchen Guo, Aryan Kaul, Ana Vizitiv, Daphne Tsai</div>
+            </div>
+            <div class="meta-row">
+              <div class="k">Year</div>
+              <div class="v">2026</div>
+            </div>
+            <div class="meta-row">
+              <div class="k">Course</div>
+              <div class="v">Designing for Disaster Recovery, Prof. Harry West</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero visual -->
+      <div class="lm-hero">
+        <div class="lm-brand">
+          <img src="images/lionsmed-logo.png" alt="Lions-Med logo">
+          <div>
+            <div class="name">Lions-Med</div>
+            <div class="sub">iOS prototype · five tabs</div>
+          </div>
+        </div>
+        <div class="lm-pull">"When the student health center closed during the blizzard, I had no idea where else to go."</div>
+        <div class="lm-cite">— Columbia student, blizzard, February 2026</div>
+        <div class="screens">
+          <img src="images/screen-1-maps.png" alt="Maps view showing nearby clinics with status indicators">
+          <img src="images/screen-2-community.png" alt="Community feed with crowdsourced reports">
+          <img src="images/screen-3-report-top.png" alt="Submit report screen, top half">
+          <img src="images/screen-4-report-bottom.png" alt="Submit report screen, services and pricing">
+          <img src="images/screen-5-alerts.png" alt="Alerts screen with urgent help requests">
+          <img src="images/screen-6-profile.png" alt="Profile screen with contributor score">
+        </div>
+      </div>
+
+      <div class="project-body">
+        <div class="num"></div>
+        <div class="body-content">
+
+          <div class="body-block">
+            <h4>The problem</h4>
+            <p>When disasters hit New York, the visible response focuses on life-threatening injuries. But there's a quieter crisis underneath: the <em>medical gray zone</em>. Insulin running low. Asthma inhalers unavailable. A wound that needs stitches but isn't an emergency. Routine care that suddenly has nowhere to go.</p>
+            <p>Existing tools fail here. Hospital websites go stale. Google Maps doesn't know if a pharmacy has supplies. 311 is for triage, not navigation. People are forced to guess.</p>
+          </div>
+
+          <div class="body-block">
+            <h4>The hypothesis</h4>
+            <p>The information already exists in the city, distributed across the people standing in waiting rooms, walking past closed pharmacies, refilling prescriptions. The question is not how to generate it. It is how to collect, verify, and surface it fast enough to matter.</p>
+            <p>For that to work, the platform has to earn an everyday role before disasters happen. A crowdsourced platform with no users on day zero is no platform on day one.</p>
+          </div>
+
+          <div class="body-block">
+            <h4>My role</h4>
+            <p>I led the design and built the high-fidelity interactive prototype, a five-tab iOS app covering Maps, Community, Report, Alerts, and Profile. I owned the visual language, interaction flows, and the contributor-score system that distinguishes verified reports from unverified ones.</p>
+            <p>Research, content, and the strategic framing were team work with Aryan Kaul, Ana Vizitiv, and Daphne Tsai.</p>
+          </div>
+
+          <div class="body-block">
+            <h4>How we got there</h4>
+            <p>The core design problem was the <em>cold start</em>. We solved it by anchoring the product in everyday utility: clinic wait times, medication prices, insurance coverage. The same data that helps a student pick where to fill a prescription on an ordinary day is the data we need already in place when an ordinary day is not.</p>
+            <p>Trust was the second design problem. We chose to expose raw community reports rather than pre-digested AI summaries. AI agents fill gaps from clinic websites and Reddit when the crowd is silent, but they sit beside the human reports, not above them.</p>
+          </div>
+
+          <div class="body-block">
+            <h4>Decisions left on the floor</h4>
+            <p>An earlier version had healthcare providers as formal data partners, with API integrations and clinical dashboards. We cut it. Hospitals move on a different timescale than the platform needs to. Providers participate passively now, through a QR code at the check-in desk, and that is it.</p>
+            <p>We also dropped neighbor-to-neighbor supply sharing. The idea looked good on paper but raised real safety and liability problems we could not resolve at our scope.</p>
+          </div>
+
+          <div class="body-block">
+            <h4>What I learned</h4>
+            <p>Trust and data don't scale the same way. A hundred reports can still feel unreliable, while three reports from people you recognize will move you. The contributor-score system isn't a gamification layer on top of the data, it is the structure that makes the data legible.</p>
+            <p>The other lesson came from feedback we received midway through. A case study set in Columbia is not a case study about Columbia. The pilot was the proof, not the point.</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- ===== PROJECT 02 — Facial Recognition ===== -->
+  <article class="project secondary">
+    <div class="container">
+      <div class="head">
+        <div class="num">02</div>
+        <div class="head-main">
+          <div>
+            <h3>Foot traffic, seen by a <em>camera</em>.</h3>
+            <p class="tagline">A real-time facial recognition and movement analysis system that turns a single video stream into structured foot traffic data.</p>
+            <div class="meta-side">
+              <div class="meta-row">
+                <div class="k">Role</div>
+                <div class="v">Independent project</div>
+              </div>
+              <div class="meta-row">
+                <div class="k">Stack</div>
+                <div class="v">Python, OpenCV, Scikit-Learn</div>
+              </div>
+              <div class="meta-row">
+                <div class="k">Year</div>
+                <div class="v">2024</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="project-body">
+        <div class="num"></div>
+        <div class="body-content">
+          <div class="body-block">
+            <h4>The work</h4>
+            <p>I built a system that wirelessly relays a live video feed into a recognition pipeline. The pipeline identifies faces, tracks movement direction across frames, and aggregates the result into foot traffic estimates over time.</p>
+            <p>Under the hood: Haar cascades for detection, eigenface decomposition (PCA) for recognition, gradient descent to tune the cost function during training. Detection accuracy reached 95 percent; recognition reached 74 percent on the test set.</p>
+          </div>
+
+          <div class="body-block">
+            <h4>What I took from it</h4>
+            <p>This was the first time I watched a model get something obviously wrong and could read the math behind why. The eigenfaces visualization made it concrete: the first principal component was pulling toward overall lighting more than facial structure, which explained the confusions I was seeing. Theory becomes useful at the moment you can see what it is missing.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- ===== PROJECT 03 — Web Scraper ===== -->
+  <article class="project secondary">
+    <div class="container">
+      <div class="head">
+        <div class="num">03</div>
+        <div class="head-main">
+          <div>
+            <h3>A web scraper that learned to <em>wait less</em>.</h3>
+            <p class="tagline">An interactive subdirectory crawler that traverses a website, extracts key images and keywords, and finishes 18 times faster than the version I started with.</p>
+            <div class="meta-side">
+              <div class="meta-row">
+                <div class="k">Role</div>
+                <div class="v">Independent project</div>
+              </div>
+              <div class="meta-row">
+                <div class="k">Stack</div>
+                <div class="v">Python, BeautifulSoup, concurrent.futures</div>
+              </div>
+              <div class="meta-row">
+                <div class="k">Year</div>
+                <div class="v">2024</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="project-body">
+        <div class="num"></div>
+        <div class="body-content">
+          <div class="body-block">
+            <h4>The work</h4>
+            <p>The first version of the tool worked. It took 36.8 minutes to crawl a thousand URLs, which meant in practice nobody used it. The second version took 2.1 minutes. The difference was a thread pool, careful batching, and refusing to do sequentially what could happen in parallel.</p>
+          </div>
+
+          <div class="body-block">
+            <h4>What I took from it</h4>
+            <p>The bottleneck was almost never where I expected. Most of the speedup came from one or two changes that were obvious only after profiling. The slow version was more useful as a teacher than the fast version was as a tool.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer id="contact">
+  <div class="container">
+    <div class="label">Contact</div>
+    <h2>Get in <em>touch</em>. Reach me at <a href="mailto:yg3090@columbia.edu">yg3090@columbia.edu</a>.</h2>
+
+    <div class="links">
+      <div class="col">
+        <div class="k">Email</div>
+        <a href="mailto:yg3090@columbia.edu">yg3090@columbia.edu</a>
+      </div>
+      <div class="col">
+        <div class="k">Phone</div>
+        <span class="v">+1 (805) 978-6726</span>
+      </div>
+      <div class="col">
+        <div class="k">Location</div>
+        <span class="v">New York, NY</span>
+      </div>
+    </div>
+
+    <div class="colophon">
+      <span>© 2026 Yuchen Guo</span>
+      <span>Set in Instrument Serif and Inter Tight</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
